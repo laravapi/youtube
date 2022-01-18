@@ -4,6 +4,8 @@ namespace LaravelApi\YouTube;
 
 class YouTubeWrapper
 {
+    public $faker = YouTubeWrapperFaker::class;
+
     public function config()
     {
         return [
@@ -19,7 +21,7 @@ class YouTubeWrapper
      */
     public function getVideoInfo(string $videoId)
     {
-
+        return 'Real video info';
     }
 
     /**
