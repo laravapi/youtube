@@ -2,6 +2,8 @@
 
 namespace LaravelApi\YouTube;
 
+use Alaouy\Youtube\Facades\Youtube;
+
 class YouTubeWrapper
 {
     public $faker = YouTubeWrapperFaker::class;
@@ -16,26 +18,8 @@ class YouTubeWrapper
         ];
     }
 
-    /**
-     * Get info for a video
-     */
-    public function getVideoInfo(string $videoId)
-    {
-        return 'Real video info';
-    }
-
-    /**
-     * Get activities for channel
-     *
-     * Get channel activities by channel ID, return an array of PHP objects
-     */
-    public function getActivitiesByChannelId(string $channelId)
-    {
-
-    }
-
     public function __call($name, $attributes)
     {
-        dump('API Call to ' . (new \ReflectionClass($this))->getShortName() . ' -> ' . $name);
+        return Youtube::$name($attributes);
     }
 }
