@@ -6,7 +6,7 @@ use Alaouy\Youtube\Facades\Youtube;
 
 class YouTubeWrapper
 {
-    public $faker = YouTubeWrapperFaker::class;
+    // public $faker = YouTubeWrapperFaker::class;
 
     public function config()
     {
@@ -20,6 +20,6 @@ class YouTubeWrapper
 
     public function __call($name, $attributes)
     {
-        return Youtube::$name($attributes);
+        return Youtube::$name(...$attributes);
     }
 }
